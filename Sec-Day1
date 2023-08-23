@@ -1,0 +1,30 @@
+----------------------------------------------------------------------------------------------------
+SECURITY DAY 1 MODULE LINKS AND INFO:
+CTFD SERVER: http://10.50.20.250:8000/login
+SECURITY FG: https://sec.cybbh.io/public/security/latest/lessons/lesson-1-pentest_sg.html
+USERNAME: DATA-505-M
+PASSWORD: gZpnaU9ejwtC4QR
+GREY HOST IP -> 10.50.42.146
+QUOTES TO SCRAPE: https://quotes.toscrape.com/
+----------------------------------------------------------------------------------------------------
+DATA SCRAPING SCRIPT:
+RUN FIRST: pip install lxml requests THEN AS FOLLOWS:
+  #!/usr/bin/python
+  import lxml.html
+  import requests
+  page = requests.get('http://quotes.toscrape.com')
+  tree = lxml.html.fromstring(page.content)
+  authors = tree.xpath('//small[@class="author"]/text()')
+  print ('Authors: ',authors)
+OUTPUTS: Authors:  ['Albert Einstein', 'J.K. Rowling', 'Albert Einstein', 'Jane Austen', 'Marilyn Monroe', 'Albert Einstein', u’Andr\xe9 Gide', 'Thomas A. Edison', 'Eleanor Roosevelt', 'Steve Martin']
+------
+LOCATE NMAP SCRIPTS IN /usr/share/nmap/scripts, EXAMPLES AS FOLLOWS: 
+  nmap --script <filename>|<category>|<directory>
+  nmap --script-help "ftp-* and discovery"
+  nmap --script-args <args>
+  nmap --script-args-file <filename>
+  nmap --script-help <filename>|<category>|<directory>
+  nmap --script-trace
+------ 
+DEMO NOTES:
+----------------------------------------------------------------------------------------------------
