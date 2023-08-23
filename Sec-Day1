@@ -10,6 +10,7 @@ ARMY CYBBH: https://vta.cybbh.space/horizon/project/
 WIN OPS: 10.50.28.16
 LIN OPS: 10.50.41.179
 DRAW.IO: https://app.diagrams.net/
+GOOGLE ROBOTS.TXT: https://www.google.com/robots.txt
 ----------------------------------------------------------------------------------------------------
 DATA SCRAPING SCRIPT:
 RUN FIRST: pip install lxml requests THEN AS FOLLOWS:
