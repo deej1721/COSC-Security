@@ -6,6 +6,9 @@ USERNAME: DATA-505-M
 PASSWORD: gZpnaU9ejwtC4QR
 GREY HOST IP -> 10.50.42.146
 QUOTES TO SCRAPE: https://quotes.toscrape.com/
+ARMY CYBBH: https://vta.cybbh.space/horizon/project/
+WIN OPS: 10.50.28.16
+LIN OPS: 10.50.41.179
 ----------------------------------------------------------------------------------------------------
 DATA SCRAPING SCRIPT:
 RUN FIRST: pip install lxml requests THEN AS FOLLOWS:
