@@ -36,3 +36,15 @@ JLE Jump if less than or equal
 JE Jump if equal
 ----------------------------------------------------------------------------------------------------
 REVERSE ENGINEERING DEMO 1:
+main:
+  mov rax, 16 #MEANS 16-> RAX
+  push rax    #PUSHES SPECIFIED VALUE ONTO THE STACK (16 NOW ON THE STACK)
+  jmp mem2    #ESSENTIALLY A FUNCTION CALL TO mem2
+mem1
+  mov,rax, 0  #ASSIGN rax VALUE OF 0
+  ret         #RETURN TO MAIN
+mem2:
+  pop r8      #POPS SPECIFIED VALUE OFF THE STACK AND ASSIGNS IT TO THE SPECIFIED VARIABLE (R8=16 NOW)
+  cmp rax,r8  #COMPARES SPECIFIED VALUES (rax=r8 AS 16=16,THUS RETURNS TRUE)
+  je mem1     #ESSENTIALLY A FUNCTION CALL TO mem1
+----------------------------------------------------------------------------------------------------
