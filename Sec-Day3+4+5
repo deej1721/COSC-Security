@@ -48,4 +48,5 @@ mem2:
   cmp rax,r8  #COMPARES SPECIFIED VALUES (rax=r8 AS 16=16,THUS RETURNS TRUE)
   je mem1     #ESSENTIALLY A FUNCTION CALL TO mem1
 ----------------------------------------------------------------------------------------------------
-ebHwRYOhGk0yyRm51ESj
+CREATE ADMIN ACCOUNT: ebHwRYOhGk0yyRm51ESj
+----------------------------------------------------------------------------------------------------
