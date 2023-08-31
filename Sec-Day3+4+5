@@ -49,6 +49,7 @@ mem2:
   je mem1     #ESSENTIALLY A FUNCTION CALL TO mem1
 ----------------------------------------------------------------------------------------------------
 CREATE ADMIN ACCOUNT: ebHwRYOhGk0yyRm51ESj
+ELF EXPLOITATION 1: jLifN87T4hxEANsLggHv
 ----------------------------------------------------------------------------------------------------
 msfconsole
 use payload/linux/x86/exec
