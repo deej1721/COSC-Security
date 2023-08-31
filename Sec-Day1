@@ -50,4 +50,5 @@ proxychains nmap -v -sT -Pn -T4 -sV 192.168.28.111
 NMAP ENUM CMD:
 proxychains nmap -v -sT -Pn -T4 --script=http-enum.nse 192.168.28.111 -p 80
 !!!~CLEAR CACHE IF ENCOUNTERING ISSUES WITH WEBSITES~!!!
+WINDOWS FLAG: zlNNDpvOtclgpqU3dPZW
 ----------------------------------------------------------------------------------------------------
