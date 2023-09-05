@@ -123,3 +123,4 @@ s.send(buf)       #sends the variable buf
 print s.recv(1024)   #print response
 s.close()         #close the connection
 ----------------------------------------------------------------------------------------------------
+comrade::StudentMidwayPassword
