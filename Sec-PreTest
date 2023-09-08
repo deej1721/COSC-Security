@@ -1,0 +1,22 @@
+------------------------------------------------------------------------------------------------------------------------
+COSC SECURITY PRETEST NOTES
+----------
+RECON
+  PING SWEEP: 
+    Linux: for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done
+    Windows: for /L %i in (1,1,255) do @ping -n 1 -w 200 192.168.1.%i > nul && echo 192.168.1.%i is up.
+  PORT ENUMERATION:
+    nmap -sS -Pn 8.8.8.8 -p 135-139,22,80,443,21,8080
+    nc -Cv 127.0.0.1 80
+    nmap --script http-enum <IP Address>
+       --script-args http-enum.basepath='<Web Server Dir/>' <IP Address>
+    nmap -p 445 --script smb-os-discovery <IP Address / Subnet>
+    nmap -p 80 --script=firewalk.nse <IP Address>
+----------
+WEB EXPLOITATION / SQL
+----------
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
