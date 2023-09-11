@@ -1,6 +1,32 @@
 AT HOME -> USE MOBAXTERM!!!
 ------------------------------------------------------------------------------------------------------------------------
 COSC SECURITY PRETEST NOTES
+----------------------------------------------------------------------------------------------------
+SECURITY DAY 1 MODULE LINKS AND INFO:
+CTFD SERVER: http://10.50.20.250:8000/login
+SECURITY FG: https://sec.cybbh.io/public/security/latest/lessons/lesson-1-pentest_sg.html
+USERNAME: DATA-505-M
+PASSWORD: gZpnaU9ejwtC4QR
+GREY HOST IP -> 10.50.42.146
+QUOTES TO SCRAPE: https://quotes.toscrape.com/
+ARMY CYBBH: https://vta.cybbh.space/horizon/project/
+WIN OPS: 10.50.28.16
+LIN OPS: 10.50.41.179
+DRAW.IO: https://app.diagrams.net/
+GOOGLE ROBOTS.TXT: https://www.google.com/robots.txt
+----------------------------------------------------------------------------------------------------
+MASTER SOCKET CREATION:
+ssh -MS /tmp/gray student@10.50.26.14
+ssh -MS /tmp/comrade comrade@localhost -p 41701
+NEW DYNAMIC TUNNEL METHOD:
+ssh -S /tmp/gray gray -O forward -D 9050
+ssh -S /tmp/gray gray -O cancel -D 9050
+ssh -S /tmp/comrade comrade -O forward -D 9050
+
+NEW FORWARD TUNNEL METHOD:
+ssh -S /tmp/gray gray -O forward -L 41700:192.168.28.111:80
+ssh -S /tmp/gray gray -O forward -L 41701:192.168.28.111:22
+ssh -S /tmp/gray gray -O cancel -L 41701:192.168.28.111:22
 ----------
 xfreerdp /u:<USERNAME> /p:<PASSWORD> /dynamic-resolution + clipboard /v:<IP>
 RECON
