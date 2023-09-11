@@ -1,3 +1,4 @@
+AT HOME -> USE MOBAXTERM!!!
 ------------------------------------------------------------------------------------------------------------------------
 COSC SECURITY PRETEST NOTES
 ----------
@@ -6,18 +7,26 @@ RECON
     Linux: for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done
     Windows: for /L %i in (1,1,255) do @ping -n 1 -w 200 192.168.1.%i > nul && echo 192.168.1.%i is up.
   PORT ENUMERATION:
+    nmap -v -sT -Pn -T4 -sV <IP>
     nmap -sS -Pn 8.8.8.8 -p 135-139,22,80,443,21,8080
     nc -Cv 127.0.0.1 80
-    nmap --script http-enum <IP Address>
+    nmap --script -v -sT -T4 -sV http-enum <IP Address> -p 80
        --script-args http-enum.basepath='<Web Server Dir/>' <IP Address>
     nmap -p 445 --script smb-os-discovery <IP Address / Subnet>
     nmap -p 80 --script=firewalk.nse <IP Address>
 ----------
 WEB EXPLOITATION / SQL
 ----------
-AT HOME -> USE MOBAXTERM!!!
 
-
+----------
+METHODOLOGY: 
+WHEN DISCOVER IP OF INTEREST:
+  SCAN PORTS: nmap -v -sT -Pn -T4 -sV <IP>
+  SCAN HTTP: 
+WHEN DISCOVER INPUT FIELD ON WEBSITE:
+  - ATTEMPT DIRECTORY TRAVERSAL ../../../../ , LOOK AT /etc/passwd FOR USERS WITH SHELLS OR PERMS, /etc/host FOR NEW IPS
+  - TO DISPLAY WHAT WAS SENT IN INPUT FIELD AFTER SUBMISSION: F12 -> NEWTWORK, REQUEST, ENABLE RAW, AFTER THIS: ADD "?" TO URL AFTER .php, THEN PASTE FINDINGS FROM THE REQUEST
+  - OR TRY IN URL: ?username=tom' OR 1='1 & passwd=tom' OR 1='1
 ------------------------------------------------------------------------------------------------------------------------
 SCRIPTS 
 mybuff.py
