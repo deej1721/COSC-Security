@@ -1,6 +1,11 @@
 AT HOME -> USE MOBAXTERM!!!
 ------------------------------------------------------------------------------------------------------------------------
 COSC SECURITY PRETEST NOTES
+10.50.37.70
+192.168.28.0/27
+192.168.28.160/27
+FFcy67MnQaE33rt8JNm1
+
 ----------------------------------------------------------------------------------------------------
 SECURITY DAY 1 MODULE LINKS AND INFO:
 CTFD SERVER: http://10.50.20.250:8000/login
@@ -190,3 +195,24 @@ if($_GET['cmd']) {
 </BODY></HTML>
 
 ------------------------------------------------------------------------------------------------------------------------
+OPNOTES:
+  1 Province    Simferopol
+  2 Civilian population     320477
+  3 Residing Unit   262nd Military Storage
+  4 Troop strength  1200
+  5 Province    Rick Sanchez
+  6 Civilian population     Rsanch
+  7 Residing Unit   1
+  8 Troop strength  ScaryTerry
+  9 Province    Morty Smith
+ 10 Civilian population     Msmith
+ 11 Residing Unit   2
+ 12 Troop strength  Squanchy
+ 13 Province    Frank Palicky
+ 14 Civilian population     Fpalic
+ 15 Residing Unit   3
+ 16 Troop strength  Birdperson
+ 17 Province    Krombopulos Michael
+ 18 Civilian population     Kmichae
+.177 -> NIX1
+.182 -> DEFENSE_KP
